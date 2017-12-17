@@ -1,0 +1,42 @@
+<%= form_with(model: project, local: true) do |f| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+      <strong><%= pluralize(project.errors.count, "error") %> prohibited this test from being saved:</strong>
+
+      <ul>
+      <% project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label for="project_name">Name</label>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>  
+
+  <div class="form-group">
+    <label for="project_type">Type</label>
+    <%= f.select(:type, Project.types.map{|t| [t[0], t[0]]}, {}, {id: 'project_type', class: 'form-control col-sm-2'} ) %>
+  </div> 
+
+  <div class="form-group">
+    <label for="project_description">Description</label>
+    <%= f.text_area :description, class: 'form-control', cols: 10, rows: 5 %>
+  </div>
+
+  <div class="form-group">
+    <label for="estimated_effort_level">Estimated Effort Level (Hours)</label>
+    <%= f.number_field :estimated_effort_level, class: 'form-control col-sm-2' %>
+  </div>
+
+  <div class="form-group">
+    <label for="actual_effort_level">Actual Effort Level (Hours)</label>
+    <%= f.number_field :actual_effort_level, class: 'form-control col-sm-2' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit t('helpers.submit.submit', model: 'Project'), class: 'btn btn-primary' %>
+  </div>
+<% end %>

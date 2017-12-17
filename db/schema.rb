@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(version: 20171214224933) do
     t.text "description"
     t.integer "type", default: 0
     t.integer "status", default: 0
+    t.decimal "estimated_effort_level", precision: 7, scale: 2
+    t.decimal "actual_effort_level", precision: 7, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actual_effort_level"], name: "index_projects_on_actual_effort_level"
+    t.index ["estimated_effort_level"], name: "index_projects_on_estimated_effort_level"
     t.index ["status"], name: "index_projects_on_status"
     t.index ["type"], name: "index_projects_on_type"
   end

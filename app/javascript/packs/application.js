@@ -7,8 +7,12 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import 'bootstrap/dist/css/bootstrap'
-import '../theme'
+// Bootstrap styles
+import '../styles/bootstrap.scss';
+import '../styles/bootstrap-theme.scss';
 
-import 'jquery'
-import 'tether'
+// Bootstrap js components and dependencies
+import 'tether';
+import 'jquery';
+import 'bootstrap';
+

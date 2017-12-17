@@ -1,0 +1,10 @@
+<tr>
+  <td><%= link_to project.name, project -%></td>
+  <td><%= project.type -%></td>
+  <td><%= project_status_badge(project) -%></td>
+  <td>
+    <%= link_to 'Show', project %>
+    <%= link_to 'Edit', edit_project_path(project) %>
+    <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </td>
+</tr>
