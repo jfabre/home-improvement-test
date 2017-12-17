@@ -34,9 +34,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Authentication
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'devise', '~> 4.3.0'
+gem 'omniauth', '~> 1.7.1'
+gem 'omniauth-facebook', '~> 4.0.0'
+
+# Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
