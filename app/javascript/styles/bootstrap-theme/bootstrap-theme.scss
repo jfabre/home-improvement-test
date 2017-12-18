@@ -1,8 +1,12 @@
 @import './buttons';
+@import './dropdowns';
 
 body {
-  padding-top: 5rem;
   min-height: 75rem;
+}
+
+body > .container {
+  padding: 60px 15px 0;
 }
 
 .jumbotron {
