@@ -117,7 +117,7 @@ Devise.setup do |config|
   # config.send_password_change_notification = false
 
   # ==> Configuration for :omniauth
-  config.omniauth :facebook, "162029561076174", "1cd5dd59bec7ab1637517945496b4fed" 
+  # config.omniauth :facebook, "<app_id>", "<app_secret>" 
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
