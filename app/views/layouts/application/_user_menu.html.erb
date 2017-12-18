@@ -1,0 +1,11 @@
+<!-- _user_menu.html -->
+<div class="dropdown">      
+  <button class="btn btn-auth-menu dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img src="<%= current_user.image -%>">
+  </button>
+
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownAuthMenu">
+    <a class="dropdown-item" href="<%= destroy_user_session_path -%>">Log Out</a>
+  </div>
+</div>
+<!-- _user_menu.html -->

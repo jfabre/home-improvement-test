@@ -33,10 +33,12 @@ ActiveRecord::Schema.define(version: 20171214224933) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "uid"
+    t.string "provider"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["uid"], name: "index_users_on_uid", unique: true
+    t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
 end

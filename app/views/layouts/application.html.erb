@@ -7,18 +7,15 @@
     <title>Home Improvement Test</title>
     <%= csrf_meta_tags %>
 
-    <%= javascript_include_tag 'application' %>    
+    <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </head>
   <body>
-    <%= render partial: 'layouts/application/header' %>
-    
-    <div class="container-fluid">
-      <%= render partial: "shared/flash_messages", locals: {flash: flash} %> 
-    </div>
+    <%= render partial: "layouts/application/header" %>
+    <%= render partial: "shared/flash_messages", locals: {flash: flash} if flash.present? %> 
 
-    <div class="main">
+    <main role="main">
       <%= yield %>
-    </div>
+    </main>
   </body>
 </html>
