@@ -13,7 +13,7 @@ module ApplicationHelper
     end
   end
 
-  def nav_item_state_for(path)
-    current_page?(path) ? "active" : ""
+  def nav_item_state_for(resource)
+    controller_name == resource ? "active" : ""
   end  
 end
