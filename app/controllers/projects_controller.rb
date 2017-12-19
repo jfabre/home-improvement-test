@@ -65,7 +65,7 @@ class ProjectsController < ApplicationController
 
   private
     def set_project
-      @project = Project.find(params[:id])
+      @project = Project.includes(:comments).find(params[:id])
     end
 
     # Only allow the white listed params through.

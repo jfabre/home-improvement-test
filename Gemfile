@@ -38,6 +38,9 @@ gem 'devise', '~> 4.3.0'
 gem 'omniauth', '~> 1.7.1'
 gem 'omniauth-facebook', '~> 4.0.0'
 
+# Webpacker-React makes it easy to use React with Webpacker in your Rails applications
+gem 'webpacker-react'
+
 # Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
 gem 'figaro'
 

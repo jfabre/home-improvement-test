@@ -8,8 +8,15 @@ Rails.application.routes.draw do
       get 'sign_in',  to: 'devise/sessions#new', as: :new_user_session
       get 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
     end
+     
+    # concern :commentable do
+    #   resources :comments
+    # end  
 
-    resources :projects
+    resources :projects do
+      resources :comments, commentable_type: 'Project'
+    end
+
     root "projects#index"
   end
 end

@@ -1,0 +1,8 @@
+<div class="media">
+  <%= image_tag(comment.user_image, size: "32", alt: comment.user_email, class: "mr-3 rounded-circle") %>
+
+  <div class="media-body"> 
+    <h5 class="mt-0"><%= comment.user_full_name -%></h5>
+    <%= comment.body %>   
+  </div>
+</div>

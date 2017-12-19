@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218055559) do
+ActiveRecord::Schema.define(version: 20171218175746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20171218055559) do
     t.decimal "actual_effort_level", precision: 7, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "comments_count", default: 0
     t.index ["actual_effort_level"], name: "index_projects_on_actual_effort_level"
     t.index ["estimated_effort_level"], name: "index_projects_on_estimated_effort_level"
     t.index ["status"], name: "index_projects_on_status"
@@ -42,10 +43,11 @@ ActiveRecord::Schema.define(version: 20171218055559) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "full_name", null: false
     t.string "email", default: "", null: false
+    t.string "image"
     t.string "uid"
     t.string "provider"
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
