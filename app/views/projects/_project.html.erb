@@ -8,13 +8,13 @@
   <td><%= project.created_at.to_s(:db) -%></td>
   <td class="text-right">
     <% if policy(project).update? %>
-      <%= link_to edit_project_path(project), class: 'btn btn-outline-primary btn-sm' do %>
+      <%= link_to edit_project_path(project), class: 'btn btn-link btn-sm' do %>
         <i class="fa fa-edit" aria-hidden="true"></i> Edit
       <% end %>
     <% end %>
   
     <% if policy(project).destroy? %>
-      <%= link_to project, {method: :delete, class: 'btn btn-outline-primary btn-sm', data: { confirm: 'Are you sure?' }} do %>
+      <%= link_to project, {method: :delete, class: 'btn btn-link btn-sm', data: { confirm: 'Are you sure?' }} do %>
         <i class="fa fa-trash-o" aria-hidden="true"></i> Destroy
       <% end %>
     <% end %>

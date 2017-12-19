@@ -7,13 +7,13 @@
   
   <td class="text-right">
     <% if policy(comment).update? %>
-      <%= link_to edit_comment_path(comment), class: 'btn btn-outline-primary btn-sm' do %>
+      <%= link_to edit_comment_path(comment), class: 'btn btn-link btn-sm' do %>
         <i class="fa fa-edit" aria-hidden="true"></i> Edit
       <% end %>
     <% end %>
   
     <% if policy(comment).destroy? %>
-      <%= link_to comment, {method: :delete, class: 'btn btn-outline-primary btn-sm', data: { confirm: 'Are you sure?' }} do %>
+      <%= link_to comment, {method: :delete, class: 'btn btn-link btn-sm', data: { confirm: 'Are you sure?' }} do %>
         <i class="fa fa-trash-o" aria-hidden="true"></i> Destroy
       <% end %>
     <% end %>
