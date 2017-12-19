@@ -39,6 +39,11 @@
   </div>
 
   <div class="row mb-2">
+    <div class="col-4"><strong>Created By</strong></div>
+    <div class="col-8"><%= @project.owner_full_name -%></div>
+  </div>
+
+  <div class="row mb-2">
     <div class="col-4"><strong>Created At</strong></div>
     <div class="col-8"><%= @project.created_at -%></div>
   </div>
