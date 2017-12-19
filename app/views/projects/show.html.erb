@@ -5,9 +5,11 @@
       <h3><%= @project.name -%></h3>
     </div>
     <div class="col-6 text-right">
-      <%= link_to(edit_project_path(@project), class: 'btn btn-outline-primary') do %>
-        <i class="fa fa-edit" aria-hidden="true"></i> Edit Project
-      <% end %> 
+      <% if policy(@project).update? %>
+        <%= link_to(edit_project_path(@project), class: 'btn btn-outline-primary') do %>
+          <i class="fa fa-edit" aria-hidden="true"></i> Edit Project
+        <% end %> 
+      <% end %>
     </div>
   </div>
   

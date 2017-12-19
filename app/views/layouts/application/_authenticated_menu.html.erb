@@ -2,6 +2,9 @@
   <li class="nav-item <%= nav_item_state_for('projects') -%>">
     <%= link_to "Projects", projects_path, class: 'nav-link' if policy(Project).index? %>
   </li> 
+  <li class="nav-item <%= nav_item_state_for('admin_comments') -%>">
+    <%= link_to "Comments", comments_path, class: 'nav-link' if policy(Comment).index? %>
+  </li>
   <li class="nav-item <%= nav_item_state_for('users') -%>">
     <%= link_to "Users", users_path, class: 'nav-link' if policy(User).index? %>
   </li>

@@ -4,6 +4,7 @@
   <td><%= project_type_badge(project.type) -%></td>
   <td><%= project.owner_full_name -%></td>
   <td><%= project_status_badge(project.status) -%></td>
+  <td><%= link_to project.comments_count, project_comments_path(project) -%></td>
   <td><%= project.created_at.to_s(:db) -%></td>
   <td class="text-right">
     <% if policy(project).update? %>

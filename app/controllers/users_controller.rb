@@ -1,6 +1,4 @@
 class UsersController < ProtectedController
-  before_action :authenticate_user!
-
   # GET /users
   def index
     @users = policy_scope(User)
