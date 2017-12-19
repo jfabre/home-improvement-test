@@ -1,8 +1,21 @@
-<div class="media">
-  <%= image_tag(comment.user_image, size: "32", alt: comment.user_email, class: "mr-3 rounded-circle") %>
-
-  <div class="media-body"> 
-    <h5 class="mt-0"><%= comment.user_full_name -%></h5>
-    <%= comment.body %>   
-  </div>
-</div>
+<tr>
+  <td><%= comment.id -%></td>
+  <td><%= link_to comment.commentable_name, comment.commentable -%></td>
+  <td><%= comment.user_full_name -%></td>
+  <td><%= truncate(comment.body, length: 20) -%></td>
+  <td><%= comment.created_at.to_s(:db) -%></td>
+  
+  <td class="text-right">
+    <% if policy(comment).update? %>
+      <%= link_to edit_comment_path(comment), class: 'btn btn-outline-primary btn-sm' do %>
+        <i class="fa fa-edit" aria-hidden="true"></i> Edit
+      <% end %>
+    <% end %>
+  
+    <% if policy(comment).destroy? %>
+      <%= link_to comment, {method: :delete, class: 'btn btn-outline-primary btn-sm', data: { confirm: 'Are you sure?' }} do %>
+        <i class="fa fa-trash-o" aria-hidden="true"></i> Destroy
+      <% end %>
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,8 @@
+<div class="media">
+  <%= image_tag current_user.image, size: 40, alt: current_user.full_name, class: "rounded-circle" %>
+
+  <div class="media-body"> 
+    <h5 class="mt-0"><%= @comment.user_full_name -%></h5>
+    <p><%= @comment.body -%></p>
+  </div>
+</div>

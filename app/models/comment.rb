@@ -5,4 +5,5 @@ class Comment < ApplicationRecord
   belongs_to :user
 
   delegate :full_name, :email, :image, to: :user, prefix: true
+  delegate :name, to: :commentable, prefix: true
 end
