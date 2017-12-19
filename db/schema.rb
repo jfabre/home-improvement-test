@@ -45,7 +45,10 @@ ActiveRecord::Schema.define(version: 20171218175746) do
   create_table "users", force: :cascade do |t|
     t.string "full_name", null: false
     t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "image"
+    t.boolean "admin", default: false
+    t.boolean "boolean", default: false
     t.string "uid"
     t.string "provider"
     t.datetime "created_at", null: false

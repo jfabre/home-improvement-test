@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(email: 'admin@example.com', full_name: 'Admin', password: 'admin', image: "https://robohash.org/admin-2?set=set3", admin: true)
