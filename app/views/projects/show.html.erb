@@ -48,7 +48,7 @@
 
   <div class="row">
     <div class="col-12">
-       <%= react_component('ThreadList', resourceUrl: project_comments_url(@project, format: 'json'), imageSize: 40, threadCount: @project.comments_count) %>
+       <%= react_component('ThreadList', resourceUrl: project_comments_url(@project, format: 'json'), imageSize: 40, threadCount: @project.comments_count, placeholder: "Add a public comment...") %>
     </div>
   </div>
 </div> 

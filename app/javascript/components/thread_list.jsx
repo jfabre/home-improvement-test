@@ -65,7 +65,7 @@ class ThreadList extends React.Component {
   }
 
   render() {
-    const { imageSize } = this.props;
+    const { imageSize, placeholder } = this.props;
     const { threads } = this.state;
     let threadCount = threads.length;
 
@@ -88,7 +88,9 @@ class ThreadList extends React.Component {
           <textarea 
             onChange={event =>{ this.setState({newThread: event.target.value}) }} 
             onKeyDown={event => { this.onKeyDownHandler(event) }}
-            className="form-control" cols="10" rows="5" name="comment[body]">
+            className="form-control mt-2 mb-4"
+            placeholder={placeholder}  
+            name="comment[body]">
           </textarea>
 
           { list }
