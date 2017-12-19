@@ -45,9 +45,14 @@ gem 'webpacker-react'
 gem 'figaro'
 
 # Simple, robust and scaleable authorization system
-gem 'pundit'
+gem 'pundit', '~> 1.1.0'
 
 group :development, :test do
+  gem 'factory_bot_rails', '~> 4.8.2'
+  gem 'faker'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'pundit-matchers', '~> 1.4.1'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   

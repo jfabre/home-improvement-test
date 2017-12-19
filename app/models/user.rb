@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :projects, foreign_key: "owner_id", dependent: :destroy
-  validates_presence_of :email
+  validates_presence_of :email, unique: true
   
   enum role: [:user, :admin]
   after_initialize :set_default_role, if: :new_record?
