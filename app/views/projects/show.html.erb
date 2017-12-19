@@ -1,6 +1,16 @@
 <div class="container">
-  <h3><%= @project.name -%></h3>
-
+  
+  <div class="row mb-2">
+    <div class="col-6">
+      <h3><%= @project.name -%></h3>
+    </div>
+    <div class="col-6 text-right">
+      <%= link_to(edit_project_path(@project), class: 'btn btn-outline-primary') do %>
+        <i class="fa fa-edit" aria-hidden="true"></i> Edit Project
+      <% end %> 
+    </div>
+  </div>
+  
   <div class="row mb-2">
     <div class="col-4"><strong>Type</strong></div>
     <div class="col-8"><%= project_type_badge(@project.type) -%></div>

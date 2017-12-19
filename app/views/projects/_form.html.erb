@@ -17,23 +17,33 @@
   </div>  
 
   <div class="form-group">
-    <label for="project_type">Type</label>
-    <%= f.select(:type, Project.types.map{|t| [t[0], t[0]]}, {}, {id: 'project_type', class: 'form-control col-sm-2'} ) %>
-  </div> 
-
-  <div class="form-group">
     <label for="project_description">Description</label>
     <%= f.text_area :description, class: 'form-control', cols: 10, rows: 5 %>
   </div>
 
-  <div class="form-group">
-    <label for="estimated_effort_level">Estimated Effort Level (Hours)</label>
-    <%= f.number_field :estimated_effort_level, class: 'form-control col-sm-2' %>
-  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group">
+        <label for="project_type">Type</label>
+        <%= f.select(:type, Project.types.map{|t| [t[0], t[0]]}, {}, {id: 'project_type', class: 'form-control col-sm-4'} ) %>
+      </div> 
 
-  <div class="form-group">
-    <label for="actual_effort_level">Actual Effort Level (Hours)</label>
-    <%= f.number_field :actual_effort_level, class: 'form-control col-sm-2' %>
+      <div class="form-group">
+        <label for="project_status">Status</label>
+        <%= f.select(:status, Project.statuses.map{|t| [t[0], t[0]]}, {}, {id: 'project_status', class: 'form-control col-sm-4'} ) %>
+      </div>   
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="estimated_effort_level">Estimated Effort Level (Hours)</label>
+        <%= f.number_field :estimated_effort_level, class: 'form-control col-sm-4' %>
+      </div>
+
+      <div class="form-group">
+        <label for="actual_effort_level">Actual Effort Level (Hours)</label>
+        <%= f.number_field :actual_effort_level, class: 'form-control col-sm-4' %>
+      </div>
+    </div>
   </div>
 
   <div class="form-group">

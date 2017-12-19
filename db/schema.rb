@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218175746) do
+ActiveRecord::Schema.define(version: 20171219100342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,10 @@ ActiveRecord::Schema.define(version: 20171218175746) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "comments_count", default: 0
+    t.bigint "owner_id"
     t.index ["actual_effort_level"], name: "index_projects_on_actual_effort_level"
     t.index ["estimated_effort_level"], name: "index_projects_on_estimated_effort_level"
+    t.index ["owner_id"], name: "index_projects_on_owner_id"
     t.index ["status"], name: "index_projects_on_status"
     t.index ["type"], name: "index_projects_on_type"
   end
@@ -47,8 +49,7 @@ ActiveRecord::Schema.define(version: 20171218175746) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "image"
-    t.boolean "admin", default: false
-    t.boolean "boolean", default: false
+    t.integer "role", default: 0
     t.string "uid"
     t.string "provider"
     t.datetime "created_at", null: false

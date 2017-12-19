@@ -2,14 +2,20 @@
   <td><%= project.id -%></td>
   <td><%= link_to project.name, project -%></td>
   <td><%= project_type_badge(project.type) -%></td>
+  <td><%= project.owner_full_name -%></td>
   <td><%= project_status_badge(project.status) -%></td>
+  <td><%= project.created_at.to_s(:db) -%></td>
   <td class="text-right">
-    <%= link_to edit_project_path(project), class: 'btn btn-link' do %>
-      <i class="fa fa-edit" aria-hidden="true"></i> Edit
+    <% if policy(project).update? %>
+      <%= link_to edit_project_path(project), class: 'btn btn-outline-primary btn-sm' do %>
+        <i class="fa fa-edit" aria-hidden="true"></i> Edit
+      <% end %>
     <% end %>
   
-    <%= link_to project, {method: :delete, class: 'btn btn-link', data: { confirm: 'Are you sure?' }} do %>
-      <i class="fa fa-trash-o" aria-hidden="true"></i> Destroy
+    <% if policy(project).destroy? %>
+      <%= link_to project, {method: :delete, class: 'btn btn-outline-primary btn-sm', data: { confirm: 'Are you sure?' }} do %>
+        <i class="fa fa-trash-o" aria-hidden="true"></i> Destroy
+      <% end %>
     <% end %>
   </td>
 </tr>

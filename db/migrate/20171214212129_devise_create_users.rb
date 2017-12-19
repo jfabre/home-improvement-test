@@ -5,8 +5,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string  :email,              null: false, default: ""
       t.string  :encrypted_password, null: false, default: ""
       t.string  :image
-      t.boolean :admin, :boolean, default: false
-
+      t.integer :role, default: 0
+    
       ## Omniauthable
       t.string :uid
       t.string :provider
