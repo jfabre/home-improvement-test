@@ -6,7 +6,7 @@ class ProjectsController < ProtectedController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = policy_scope(Project)
+    @projects = policy_scope(Project).order(created_at: :desc)
   end
 
   # GET /projects/1
