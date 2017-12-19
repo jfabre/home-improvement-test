@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create admin user
-admin = User.first_or_create(email: 'admin@example.com', full_name: 'Admin', password: 'admin', image: 'https://robohash.org/admin-2?set=set3', role: :admin)
+admin = User.create(email: 'admin@example.com', full_name: 'Admin', password: 'admin', image: 'https://robohash.org/admin-2?set=set3', role: :admin)
+
+# Created regular user
+user = User.create(email: 'user@example.com', full_name: 'John Smith', password: Devise.friendly_token[0,20], image: 'https://robohash.org/user-john-smith?set=set3', role: :user)
 
 # Create public projects
 Project.create(
@@ -22,14 +25,15 @@ Project.create(
   estimated_effort_level: 24
 )
 
-Project.create(
-  owner: admin,
+project = Project.create(
+  owner: user,
   name: 'Wallpaper one wall',
   description: 'Begin by taking a photo of your existing room and measuring its dimensions. Take these with you to the interior design or wall-covering store. Ask a specialist to help sort through options that’ll work well with your existing furnishings. The specialist will also help you pick the best wall for the new paper and estimate the amount to order.',
   type: 'public',
   status: 'started',
   estimated_effort_level: 8
 )
+project.comments.create({user: user, body: 'I think this is a great idea'})
 
 # Create private projects
 Project.create(
