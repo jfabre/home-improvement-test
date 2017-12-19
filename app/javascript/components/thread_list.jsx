@@ -82,7 +82,7 @@ class ThreadList extends React.Component {
 
     return(      
       <div>
-        <a href="#threadList" onClick={this.toggle} className="btn btn-link" data-toggle="collapse" aria-expanded="false" aria-controls="threadList"><i className="fa fa-comments" aria-hidden="true"></i> Comments ({threadCount})</a>
+        <a href="#threadList" onClick={this.toggle} className="btn btn-outline-primary mb-1" data-toggle="collapse" aria-expanded="false" aria-controls="threadList"><i className="fa fa-comments" aria-hidden="true"></i> Comments ({threadCount})</a>
         
         <Collapse id="threadList" isOpen={this.state.collapse}>
           <textarea 

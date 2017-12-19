@@ -12,7 +12,6 @@ class Thread extends React.Component {
         <div className="media-body"> 
           <h5 className="mt-0">{ user.full_name }</h5>
           <p>{ body }</p>
-          <p>{ created_at }</p> 
         </div>
       </div>
     )

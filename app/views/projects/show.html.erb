@@ -1,42 +1,44 @@
-<div class="container-fluid">
-  <h2><%= @project.name -%></h2>
+<div class="container">
+  <h3><%= @project.name -%></h3>
 
-  <div class="row">
+  <div class="row mb-2">
     <div class="col-4"><strong>Type</strong></div>
-    <div class="col-8"><%= @project.type -%></div>
+    <div class="col-8"><%= project_type_badge(@project.type) -%></div>
   </div>
 
-  <div class="row">
+  <div class="row mb-2">
     <div class="col-4"><strong>Status</strong></div>
-    <div class="col-8"><%= @project.status -%></div>
+    <div class="col-8"><%= project_status_badge(@project.status) -%></div>
   </div>
  
-  <div class="row">
+  <div class="row mb-2">
     <div class="col-4"><strong>Description</strong></div>
     <div class="col-8"><%= @project.description -%></div>
   </div>
 
-  <div class="row">
+  <div class="row mb-2">
     <div class="col-4"><strong>Estimated Effort Level (Hours)</strong></div>
     <div class="col-8"><%= @project.estimated_effort_level -%></div>
   </div>
 
-  <div class="row">
+  <div class="row mb-2">
     <div class="col-4"><strong>Actual Effort Level (Hours)</strong></div>
     <div class="col-8"><%= @project.actual_effort_level -%></div>
   </div>
 
-  <div class="row">
+  <div class="row mb-2">
     <div class="col-4"><strong>Created At</strong></div>
     <div class="col-8"><%= @project.created_at -%></div>
   </div>
 
-   <div class="row">
+   <div class="row mb-2">
     <div class="col-4"><strong>Updated At</strong></div>
     <div class="col-8"><%= @project.updated_at -%></div>
   </div>
-</div> 
 
-<div class="container-fluid">
-   <%= react_component('ThreadList', resourceUrl: project_comments_url(@project, format: 'json'), imageSize: 40, threadCount: @project.comments_count) %>
+  <div class="row">
+    <div class="col-12">
+       <%= react_component('ThreadList', resourceUrl: project_comments_url(@project, format: 'json'), imageSize: 40, threadCount: @project.comments_count) %>
+    </div>
+  </div>
 </div> 
