@@ -1,0 +1,8 @@
+<ul class="navbar-nav mr-auto"> 
+  <li class="nav-item <%= nav_item_state_for(projects_path) -%>">
+    <%= link_to "Projects", projects_path, class: 'nav-link' if policy(Project).index? %>
+  </li> 
+  <li class="nav-item <%= nav_item_state_for(users_path) -%>">
+    <%= link_to "Users", users_path, class: 'nav-link' if policy(User).index? %>
+  </li>
+</ul>

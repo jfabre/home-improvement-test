@@ -1,5 +1,5 @@
 module ApplicationHelper
-
+  
   def bootstrap_alert_class_for(flash_type)    
     case flash_type.to_sym
       when :success
@@ -13,4 +13,7 @@ module ApplicationHelper
     end
   end
 
+  def nav_item_state_for(path)
+    current_page?(path) ? "active" : ""
+  end  
 end

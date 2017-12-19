@@ -5,16 +5,12 @@
   </button>
 
   <%= link_to "Home Manager", root_path, class: 'navbar-brand' %>
- 
-  <div class="collapse navbar-collapse">    
-    <ul class="navbar-nav mr-auto">
-      
-      <li class="nav-item">
-        <%= link_to "Projects", projects_path, class: 'nav-link' %>
-      </li> 
-    </ul>
-
-    <%= render partial: 'layouts/application/user_menu' if user_signed_in? %>
+  
+  <% if user_signed_in? %>
+  <div class="collapse navbar-collapse">  
+    <%= render "layouts/application/authenticated_menu" %>  
+    <%= render "layouts/application/user_menu" %>    
   </div>
+  <% end %>
 </nav>
 <!-- header.html -->
