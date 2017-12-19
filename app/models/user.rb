@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :projects, foreign_key: "owner_id"
+  has_many :projects, foreign_key: "owner_id", dependent: :destroy
   validates_presence_of :email
   
   enum role: [:user, :admin]

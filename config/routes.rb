@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       get 'sign_out', to: 'devise/sessions#destroy', as: :delete_user_session
     end
     
+    resources :users
+
     resources :projects do
       resources :comments, commentable_type: 'Project'
     end
