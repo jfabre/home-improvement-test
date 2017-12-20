@@ -25,7 +25,9 @@ config/application.yml
 #### Setup the database
         rake db:setup
 #### Start the Puma server
-        rails s                
+        rails s   
+#### Start webpack dev server
+        webpack-dev-server                     
 ### How to run the test suite
         bundle exec rspec
 
