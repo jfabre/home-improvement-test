@@ -69,7 +69,7 @@ class CommentsController < ProtectedController
     @comment.destroy
     
     respond_to do |format|
-      format.html { redirect_to polymorphic_path([@comment.commentable, :comments]), notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to comments_path, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -3,14 +3,14 @@ require 'rails_helper'
 describe ProjectPolicy do
   subject { described_class.new(user, project) }
 
-  context 'with a user accessing a public project with ownership' do
+  context 'with a owner accessing a public project' do
     let(:user) { build(:user) }
     let(:project) { build(:public_project, owner: user) }
     
     it { is_expected.to permit_actions([:edit, :update, :destroy]) }  
   end
 
-  context 'with a user accessing a public project without ownership' do
+  context 'with a user accessing a public project' do
     let(:user) { build(:user) }
     let(:project) { build(:public_project) }
     

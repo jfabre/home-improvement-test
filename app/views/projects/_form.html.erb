@@ -1,7 +1,7 @@
 <%= form_with(model: project, local: true) do |f| %>
   <% if project.errors.any? %>
     <div id="error_explanation" class="alert alert-danger" role="alert">
-      <strong><%= pluralize(project.errors.count, "error") %> prohibited this test from being saved:</strong>
+      <strong><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</strong>
 
       <ul>
       <% project.errors.full_messages.each do |message| %>
@@ -28,10 +28,12 @@
         <%= f.select(:type, Project.types.map{|t| [t[0], t[0]]}, {}, {id: 'project_type', class: 'form-control col-sm-4'} ) %>
       </div> 
 
-      <div class="form-group">
-        <label for="project_status">Status</label>
-        <%= f.select(:status, Project.statuses.map{|t| [t[0], t[0]]}, {}, {id: 'project_status', class: 'form-control col-sm-4'} ) %>
-      </div>   
+      <% if project.persisted? %>
+        <div class="form-group">
+          <label for="project_status">Status</label>
+          <%= f.select(:status, Project.statuses.map{|t| [t[0], t[0]]}, {}, {id: 'project_status', class: 'form-control col-sm-4'} ) %>
+        </div> 
+      <% end %>    
     </div>
     <div class="col-6">
       <div class="form-group">
@@ -39,10 +41,12 @@
         <%= f.number_field :estimated_effort_level, class: 'form-control col-sm-4' %>
       </div>
 
-      <div class="form-group">
-        <label for="actual_effort_level">Actual Effort Level (Hours)</label>
-        <%= f.number_field :actual_effort_level, class: 'form-control col-sm-4' %>
-      </div>
+      <% if project.persisted? %>
+        <div class="form-group">
+          <label for="actual_effort_level">Actual Effort Level (Hours)</label>
+          <%= f.number_field :actual_effort_level, class: 'form-control col-sm-4' %>
+        </div>
+      <% end %>
     </div>
   </div>
 

@@ -1,7 +1,7 @@
 <%= form_with(model: comment, local: true) do |f| %>
   <% if comment.errors.any? %>
     <div id="error_explanation" class="alert alert-danger" role="alert">
-      <strong><%= pluralize(comment.errors.count, "error") %> prohibited this test from being saved:</strong>
+      <strong><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</strong>
 
       <ul>
       <% comment.errors.full_messages.each do |message| %>

@@ -3,7 +3,7 @@ class CommentPolicy < ApplicationPolicy
 
   def initialize(current_user, model)
     @current_user = current_user
-    @user = model
+    @comment = model
   end
 
   def index?
