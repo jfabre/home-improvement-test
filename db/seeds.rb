@@ -12,6 +12,16 @@ admin = User.create(email: 'admin@example.com', full_name: 'Admin', password: 'a
 # Created regular user
 user = User.create(email: 'user@example.com', full_name: 'John Smith', password: Devise.friendly_token[0,20], image: 'https://robohash.org/user-john-smith?set=set3', role: :user)
 
+project = Project.create(
+  owner: user,
+  name: 'Wallpaper one wall',
+  description: 'Begin by taking a photo of your existing room and measuring its dimensions. Take these with you to the interior design or wall-covering store. Ask a specialist to help sort through options that’ll work well with your existing furnishings. The specialist will also help you pick the best wall for the new paper and estimate the amount to order.',
+  type: 'public',
+  status: 'started',
+  estimated_effort_level: 6
+)
+project.comments.create({user: user, body: 'I think this is a great idea'})
+
 # Create public projects
 Project.create(
   owner: admin,
@@ -25,17 +35,16 @@ Project.create(
   estimated_effort_level: 24
 )
 
-project = Project.create(
-  owner: user,
-  name: 'Wallpaper one wall',
-  description: 'Begin by taking a photo of your existing room and measuring its dimensions. Take these with you to the interior design or wall-covering store. Ask a specialist to help sort through options that’ll work well with your existing furnishings. The specialist will also help you pick the best wall for the new paper and estimate the amount to order.',
-  type: 'public',
+Project.create(
+  owner: admin,
+  name: 'New bath accessories',
+  description: 'Replacing accessories like towel bars, light fixtures and towels, plus applying a fresh coat of paint, is the absolutely easiest way to make your bathroom feel new and clean. You don’t need special skills for success; it’s a screwdriver- and-paintbrush project you can complete in a weekend. But keep in mind that this face-lift will only work if your basic fixtures—the sink and faucet, vanity, toilet, tub and tile—are all still in reasonably good shape.',
+  type: 'private',
   status: 'started',
-  estimated_effort_level: 8
+  estimated_effort_level: 8,
+  actual_effort_level: 10
 )
-project.comments.create({user: user, body: 'I think this is a great idea'})
 
-# Create private projects
 Project.create(
   owner: admin,
   name: 'Trim and paint',
@@ -45,15 +54,7 @@ Project.create(
   
   The trim combination we show looks best in rooms with at least 4-1/2-in.-tall baseboards. If your baseboard is narrower, consider replacing it or choosing a different wall decorating technique. (See “Wallpaper one wall” above.)',
   type: 'private',
-  status: 'stopped',
+  status: 'completed',
   estimated_effort_level: 24
 )
 
-Project.create(
-  owner: admin,
-  name: 'New bath accessories',
-  description: 'Replacing accessories like towel bars, light fixtures and towels, plus applying a fresh coat of paint, is the absolutely easiest way to make your bathroom feel new and clean. You don’t need special skills for success; it’s a screwdriver- and-paintbrush project you can complete in a weekend. But keep in mind that this face-lift will only work if your basic fixtures—the sink and faucet, vanity, toilet, tub and tile—are all still in reasonably good shape.',
-  type: 'private',
-  status: 'completed',
-  estimated_effort_level: 16
-)
