@@ -1,0 +1,124 @@
+$card-level-bg: #eff3f7;
+$card-level-color: #858d99;
+$card-level-color-selected: #000;
+$card-level-block-selected: #039833;
+
+$card-block-link-color: #636c72;
+$card-header-color: #333332;
+
+.card {
+  margin-bottom: 30px;
+}
+
+.card-block a {
+  color: $card-block-link-color;
+  text-decoration: underline;
+}
+
+.card-header {
+  color: $card-header-color;
+  margin-bottom: 1px;
+}
+
+.card-header h1 {
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.card-project {
+  -webkit-box-shadow: 0 0 10px rgba(201,214,223, .65);
+  -moz-box-shadow: 0 0 10px rgba(201,214,223, .65);
+  box-shadow: 0 0 10px rgba(201,214,223, .65);
+}
+
+.card-project .card-header {
+  background-color: #fff;
+  color: #404140;
+  padding: 1.5rem 2rem;
+  font-size: 2rem;
+}
+
+.card-project .card-block {
+  padding: 2rem 2rem 3rem 2rem;
+}
+
+.card-level {
+  background-color: $card-level-bg;
+  border: 1px solid #c9d6df !important;
+
+  .card-header,
+  .card-block { 
+    color: $card-level-color;
+    padding: 0;
+  }
+}
+
+.card-level:nth-of-type(even) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;  
+}
+
+.card-level:nth-of-type(odd) {
+  border-right-width: 0 !important;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.card-level .card-header {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 700;
+  min-height: 5rem;
+  background-color: $card-level-bg;;
+  color: $card-level-color;
+  border-bottom: 0;
+  margin: 0;
+  padding: 2.5rem 2rem 0.85rem 2.5rem;
+  text-align: center;
+}
+
+.card-level .card-header.active {
+  color: $card-level-color-selected;
+}  
+
+.card-level .card-block {
+  line-height: 2.5rem;
+  text-align: center;
+  padding: 0.85rem 2.5rem 2rem 2.5rem;
+}
+
+.card-level .card-block.active {
+  color: $card-level-block-selected;
+}
+
+@include media-breakpoint-down(sm) {
+  .card-level .card-header {
+    font-size: 1rem;
+    font-weight: 600;  
+    padding: 2rem 1.5rem 0.85rem 2rem;
+  }
+
+  .card-level .card-block {
+    font-size: 2rem;
+  }  
+}  
+
+@include media-breakpoint-up(md) {
+  .card-level .card-header {
+    font-size: 1rem;
+    font-weight: 600;  
+    padding: 2rem 1rem 0.85rem 1rem;
+  }
+
+  .card-level .card-block {
+    font-size: 2rem;
+  }  
+}  
+
+@include media-breakpoint-up(lg) {
+  .card-level .card-block {
+    font-size: 3rem;
+  }  
+
+}

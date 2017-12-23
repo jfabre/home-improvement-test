@@ -1,0 +1,28 @@
+.project-status {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: $brand-danger;
+  text-align: center;
+  padding: 1rem;
+}
+
+.project-status-created {
+  color: $brand-primary;
+  border: 1px solid $brand-primary  
+}
+
+.project-status-started {
+  color: $brand-danger;
+  border: 1px solid $brand-danger 
+}
+
+.project-status-stopped {
+  color: $brand-danger;
+  border: 1px solid $brand-danger 
+}
+
+.project-status-completed {
+  color: $brand-success;
+  border: 1px solid $brand-success;
+}

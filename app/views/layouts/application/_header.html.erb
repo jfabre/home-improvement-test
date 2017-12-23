@@ -1,15 +1,17 @@
 <!-- header.html -->
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <%= link_to "Home Manager", root_path, class: 'navbar-brand' %>
+  <%= link_to "Home Improvement", root_path, class: 'navbar-brand' %>
   
   <% if user_signed_in? %>
-  <div class="collapse navbar-collapse">  
-    <%= render "layouts/application/authenticated_menu" %>  
-    <%= render "layouts/application/user_menu" %>    
+  <div class="collapse navbar-collapse" id="mainNav">  
+    <%= link_to "New Project", new_project_path, class: 'btn btn-danger' %>
+    <%= render "layouts/application/authenticated_menu" %> 
+    <%= link_to "Sign Out", delete_user_session_path, class: "btn btn-primary" %>
+    <%# render "layouts/application/user_menu" %>    
   </div>
   <% end %>
 </nav>

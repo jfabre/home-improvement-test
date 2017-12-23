@@ -1,3 +1,55 @@
+<div class="card card-project">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-7">
+        <h1><%= project.name -%></h1>
+      </div>
+      <div class="col-5"> 
+        <span class="project-status project-status-<%= project.status -%>"><%= project.status -%></span>
+      </div>
+    </div>
+  </div>
+  <div class="card-block">
+    <div class="row">
+      <div class="col-12">
+        <ul class="list-inline">
+          <li class="list-inline-item"><i class="fa fa-user"></i> <a href="#"><%= project.owner_full_name -%></a></li>
+          <li class="list-inline-item"><i class="fa fa-clock-o"></i> <%= link_to "#{time_ago_in_words(project.created_at)} ago", project -%></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">      
+      <div class="col-md-7 col-12">
+        <div class="card-text mb-4"><%= project.description -%></div>
+      </div>
+
+      <div class="col-md-5 col-12">        
+        <div class="row no-gutters">
+          <div class="col-6 col-md-6 card card-level card-level-left mb-0">
+            <div class="card-header">
+              <span>Estimated level of effort</span>
+            </div>
+            <div class="card-block">
+              <span><%= project.estimated_effort_level.to_i -%></span>
+            </div>
+          </div>
+  
+          <div class="col-6 col-md-6 card card-level card-level-right mb-0">
+            <div class="card-header active">
+              <span>Actual level of effort</span>
+            </div>
+            <div class="card-block active">
+              <span><%= project.actual_effort_level.to_i -%></span>
+            </div>
+          </div> 
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
 <tr>
   <td><%= project.id -%></td>
   <td><%= link_to project.name, project -%></td>
@@ -20,3 +72,4 @@
     <% end %>
   </td>
 </tr>
+-->

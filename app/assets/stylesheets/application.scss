@@ -12,5 +12,15 @@
  *
  * 
  * require_tree .
- * require_self
+ *= require_self
  */
+
+@font-face {
+  font-family:"Orion Esperanto Dika";
+  src:font-url("ORIOND.eot?") format("eot"),
+      font-url("ORIOND.woff") format("woff"),
+      font-url("ORIOND.ttf") format("truetype"),
+      font-url("ORIOND.svg#OrionEsperantoDika") format("svg");
+  font-weight:normal;
+  font-style:normal;
+}
