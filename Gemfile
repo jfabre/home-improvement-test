@@ -49,6 +49,9 @@ gem 'figaro'
 # Simple, robust and scaleable authorization system
 gem 'pundit', '~> 1.1.0'
 
+# Webpacker makes it easy to use the JavaScript pre-processor and bundler webpack
+gem 'webpacker', '~> 3.0'
+
 group :development, :test do
   gem 'factory_bot_rails', '~> 4.8.2'
   gem 'faker'
@@ -64,9 +67,6 @@ group :development, :test do
 end
 
 group :development do
-  # Webpacker makes it easy to use the JavaScript pre-processor and bundler webpack
-  gem 'webpacker', '~> 3.0'
-
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
